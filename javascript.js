@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
         } else {
         // rock ties with rock, tie
             gameResult = "tie";
-            return "You tie! Rock ties with rock.";
+            return "Tie! Rock ties with rock.";
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
@@ -43,55 +43,90 @@ function playRound(playerSelection, computerSelection) {
         } else {
         // paper ties with paper, tie
             gameResult = "tie";
-            return "You tie! Paper ties with paper.";
+            return "Tie! Paper ties with paper.";
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
         // rock beats scissors, user loses
             gameResult = "loser";
             return "You Lose! Rock beats scissors.";
-        } else if (computerSelectin === "paper") {
+        } else if (computerSelection === "paper") {
         // scissors beats paper, user wins
             gameResult = "winner";
             return "You Won! Scissors beats paper.";
         } else {
         // scissors ties with scissors, tie
             gameResult = "tie";
-            return "You tie! Scissors ties with scissors.";
+            return "Tie! Scissors ties with scissors.";
         }
     }
 }
-
 
 // game() use for loop to cycle through 5 rounds before determining winner
 function game() {
     let playerScore = 0;
     let computerScore = 0;
     
-
+    // for loop is used to loop through this code 5 times (5 rounds)
     for (let i = 0; i < 5; i++) {
+        // variables below are reset for each round before the if... else
+        gameResult = "";
+
+        // uses player input to get player choice
+        playerPrompt = prompt("Please enter your choice between rock, paper, scissors. You have only " + (5-i) + " guesses left");
+        playerSelection = playerPrompt.toLowerCase();
+
+        // computerSelection uses function getComputerChoice() to get computer choice
+        computerSelection = getComputerChoice();
+
+        // calls playRound() to start round and display results
+        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        
+        // if... else uses gameResult to determine winner/loser/tie and then to determine who should receive the point
+        // *** - another if... else statement is nestled within first couple of condititional statements that is used to return winner/loser of game 
         if (gameResult === "winner") {
-            playRound(playerSelection, computerSelection);
-            console.log(playRound(playerSelection, computerSelection));
             playerScore ++;
-            console.log(playerScore);
+            console.log("Your score is: " + playerScore);
+            console.log("The computer score is: " + computerScore);
+            console.log(" ");
+            // ***
+            if (playerScore === 3) {
+                return alert("Congratulations! You won the game!");
+            } else if (computerScore === 3) {
+                return alert("Sorry! You lost the game.");
+            }
         } else if (gameResult === "loser") {
-            playRound(playerSelection, computerSelection);
-            console.log(playRound(playerSelection, computerSelection));
             computerScore ++;
-            console.log(computerScore);
+            console.log("Your score is: " + playerScore);
+            console.log("The computer score is: " + computerScore);
+            console.log(" ");
+            // ***
+            if (playerScore === 3) {
+                return alert("Congratulations! You won the game!");
+            } else if (computerScore === 3) {
+                return alert("Sorry! You lost the game.");
+            }
+        // if round is a tie, no points are awarded and round is started over again
+        } else if (gameResult === "tie"){
+            console.log("Your score is: " + playerScore);
+            console.log("The computer score is: " + computerScore);
+            console.log(" ");
+            i--;
+        // this conditional statement is here to remind players to use rock, paper, scissors for answer and to restart the round
         } else {
-            playRound(playerSelection, computerSelection);
-            console.log(playRound(playerSelection, computerSelection));
-            playerScore += 1;
-            computerScore += 1;
+            console.log("You entered: " + playerSelection);
+            console.log("Please use only - rock , paper , scissors");
+            console.log(" ");
+            i--;
         }
-    }
+    }  
 }
 
-
 // uses windows prompt to let user pick their choice
-let playerPrompt = prompt("Please enter your choice between rock, paper, scissors");
-let playerSelection = playerPrompt.toLowerCase();
+let playerPrompt;
+let playerSelection;
 let gameResult;
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
+alert("Use console to see results of game. Best out of 5 rounds. Try to win 3 games first. Ties count as no win for both sides.");
+game();
