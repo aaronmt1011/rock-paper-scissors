@@ -1,3 +1,4 @@
+/*
 // getComputerChoice() randomdly decides computer pick between rock, paper, scissors
 
 function getComputerChoice() {
@@ -130,3 +131,4 @@ let gameResult;
 let computerSelection = getComputerChoice();
 alert("Use console to see results of game. Best out of 5 rounds. Try to win 3 games first. Ties count as no win for both sides.");
 game();
+*/
