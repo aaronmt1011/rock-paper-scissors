@@ -49,43 +49,60 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === "paper") {
         // paper beats rock, user loses
             gameResult = "loser";
-            return "You Lose! Paper beats rock.";
+            return gameResult;
+            // return "You Lose! Paper beats rock.";
+
         } else if (computerSelection === "scissors") {
         // rock beats scissors, user wins
             gameResult = "winner";
-            return "You Won! Rock beats scissors.";
+            return gameResult;
+            // return "You Won! Rock beats scissors.";
+
         } else {
         // rock ties with rock, tie
             gameResult = "tie";
-            return "Tie! Rock ties with rock.";
+            return gameResult;
+            // return "Tie! Rock ties with rock.";
         }
+
     } else if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
         // scissors beats paper, user loses
             gameResult = "loser";
-            return "You Lose! Scissors beats paper.";
+            return gameResult;
+            // return "You Lose! Scissors beats paper.";
+
         } else if (computerSelection === "rock") {
         // paper beats rock, user wins
             gameResult = "winner";
-            return "You Won! Paper beats rock.";
+            return gameResult;
+            // return "You Won! Paper beats rock.";
+
         } else {
         // paper ties with paper, tie
             gameResult = "tie";
-            return "Tie! Paper ties with paper.";
+            return gameResult;
+            // return "Tie! Paper ties with paper.";
         }
+
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
         // rock beats scissors, user loses
             gameResult = "loser";
-            return "You Lose! Rock beats scissors.";
+            return gameResult;
+            // return "You Lose! Rock beats scissors.";
+
         } else if (computerSelection === "paper") {
         // scissors beats paper, user wins
             gameResult = "winner";
-            return "You Won! Scissors beats paper.";
+            return gameResult;
+            // return "You Won! Scissors beats paper.";
+
         } else {
         // scissors ties with scissors, tie
             gameResult = "tie";
-            return "Tie! Scissors ties with scissors.";
+            return gameResult;
+            // return "Tie! Scissors ties with scissors.";
         }
     }
 }
@@ -132,162 +149,77 @@ function game() {
         playerSelection = playerPrompt.toLowerCase();
         */
 
-
-
-        // computerSelection uses function getComputerChoice() to get computer choice
-        computerSelection = getComputerChoice();
-
-
-
-
         /* 
             Fix Below
         */
 
 
+        // computerSelection uses function getComputerChoice() to get computer choice
+        computerSelection = getComputerChoice();
+
+        /*
         rock.addEventListener('click', function() {
             playerSelection = 'rock';
-            playRound(playerSelection, computerSelection);
-            if (gameResult === "winner") {
-                playerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You won the round!';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (playerScore === 3) {
-                    tbText.textContent = 'Congratulations! You won the game!';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-                
-            } else if (gameResult === "loser") {
-                computerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You lost the round.';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (computerScore === 3) {
-                    tbText.textContent = 'Sorry! You lost the game.';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-    
-    
-            // if round is a tie, no points are awarded and round is started over again
-            } else if (gameResult === "tie"){
-                tbText.textContent = 'The game ends in a tie!';
-                textBox.appendChild(tbText);
-                i--;
-            }
+            return playerSelection;
         });
 
         paper.addEventListener('click', function() {
             playerSelection = 'paper';
-            playRound(playerSelection, computerSelection);
-            if (gameResult === "winner") {
-                playerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You won the round!';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (playerScore === 3) {
-                    tbText.textContent = 'Congratulations! You won the game!';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-                
-            } else if (gameResult === "loser") {
-                computerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You lost the round.';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (computerScore === 3) {
-                    tbText.textContent = 'Sorry! You lost the game.';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-    
-    
-            // if round is a tie, no points are awarded and round is started over again
-            } else if (gameResult === "tie"){
-                tbText.textContent = 'The game ends in a tie!';
-                textBox.appendChild(tbText);
-                i--;
-            }
+            return playerSelection;
         });
 
         scissors.addEventListener('click', function() {
             playerSelection = 'scissors';
-            playRound(playerSelection, computerSelection);
-            if (gameResult === "winner") {
-                playerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You won the round!';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (playerScore === 3) {
-                    tbText.textContent = 'Congratulations! You won the game!';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-                
-            } else if (gameResult === "loser") {
-                computerScore ++;
-                osText.textContent = `${computerScore}`;
-                psText.textContent = `${playerScore}`;
-    
-                oScoreBox.appendChild(osText);
-                pScoreBox.appendChild(psText);
-    
-                tbText.textContent = 'You lost the round.';
-                textBox.appendChild(tbText);
-    
-                // ***
-                if (computerScore === 3) {
-                    tbText.textContent = 'Sorry! You lost the game.';
-                    textBox.appendChild(tbText);
-                    return;
-                }
-    
-    
-            // if round is a tie, no points are awarded and round is started over again
-            } else if (gameResult === "tie"){
-                tbText.textContent = 'The game ends in a tie!';
-                textBox.appendChild(tbText);
-                i--;
-            }
+            return playerSelection;
         });
+        */
+
+        playRound(playerSelection, computerSelection);
+        console.log(playerSelection);
+        console.log(computerSelection);
+        console.log(gameResult);
+        if (gameResult === "winner") {
+            playerScore ++;
+            osText.textContent = `${computerScore}`;
+            psText.textContent = `${playerScore}`;
+
+            oScoreBox.appendChild(osText);
+            pScoreBox.appendChild(psText);
+
+            tbText.textContent = 'You won the round!';
+            textBox.appendChild(tbText);
+
+            // ***
+            if (playerScore === 3) {
+                tbText.textContent = 'Congratulations! You won the game!';
+                textBox.appendChild(tbText);
+            }
+            
+        } else if (gameResult === "loser") {
+            computerScore ++;
+            osText.textContent = `${computerScore}`;
+            psText.textContent = `${playerScore}`;
+
+            oScoreBox.appendChild(osText);
+            pScoreBox.appendChild(psText);
+
+            tbText.textContent = 'You lost the round.';
+            textBox.appendChild(tbText);
+
+            // ***
+            if (computerScore === 3) {
+                tbText.textContent = 'Sorry! You lost the game.';
+                textBox.appendChild(tbText);
+            }
+
+        // if round is a tie, no points are awarded and round is started over again
+        } else if (gameResult === "tie"){
+            tbText.textContent = 'The game ends in a tie!';
+            textBox.appendChild(tbText);
+            i--;
+        }
+
+        console.log(i);
 
         
         // calls playRound() to start round and display results
@@ -363,13 +295,13 @@ function game() {
         /* 
             Fix Below
         */
-// uses windows prompt to let user pick their choice
+// uses buttons to let user pick their choice
 let playerPrompt;
 let playerSelection;
 let gameResult;
 let computerSelection;
-// game();
 
+// game();
 rock.addEventListener('click', function() {
     playerSelection = 'rock';
     game();
