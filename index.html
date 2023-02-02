@@ -12,7 +12,7 @@
     <div class="main-body">
         <div class="body">
             <div class="body-text">
-                <h1>Rock, Paper, Scissors!</h1>
+                <h1 class="title-text">Rock, Paper, Scissors!</h1>
                 <p>The exciting family game is now available to play!</p>
                 <p>Below shows a brief description on the rules of the game.</p>
                 <ul>
@@ -25,19 +25,26 @@
             </div>
             <div class="scoreboard">
                 <div class="score-title">
-                    <h2>Score</h2>
+                    <h1>Score</h1>
+                    <div class="score-line"></div>
                 </div>
                 <div class="scores">
                     <div class="score-cards" id="opp-score">
                         <h3>Opponent:</h3>
+                        <div class="opp-line"></div>
                     </div>
                     <div class="score-cards" id="player-score">
                         <h3>You:</h3>
+                        <div class="player-line"></div>
                     </div>
                 </div>
             </div>
             <div class="textcard">
-                
+                <div class="textcard-text"></div>
+                <div class="textcard-pick">
+                    <div class="textcard-oPick"></div>
+                    <div class="textcard-pPick"></div>
+                </div>
             </div>
             <div class="buttons">
                 <button id="rock" class="btn">rock</button>

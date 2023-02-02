@@ -1,7 +1,16 @@
-const textBox = document.querySelector('.textcard');
+const textBox = document.querySelector('.textcard-text');
 const tbText = document.createElement('div');
 tbText.classList.add('tc-text');
+tbText.textContent = 'Good Luck!!';
+textBox.appendChild(tbText);
 
+const textBoxOPick = document.querySelector('.textcard-oPick');
+const tbOPick = document.createElement('div');
+tbOPick.classList.add('tct-result');
+
+const textBoxPPick = document.querySelector('.textcard-pPick');
+const tbPPick = document.createElement('div');
+tbPPick.classList.add('tct-result');
 
 const oScoreBox = document.querySelector('#opp-score');
 const pScoreBox = document.querySelector('#player-score');
@@ -123,6 +132,7 @@ function resetGame() {
 }
 
 
+
 function scoreUpdate(gameResult) {
     counter;
 
@@ -131,14 +141,18 @@ function scoreUpdate(gameResult) {
         computerScore += 0;
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
+        tbOPick.textContent = `Opponent: ${computerSelection}`;
+        tbPPick.textContent = `You: ${playerSelection}`;
+
 
         oScoreBox.appendChild(osText);
         pScoreBox.appendChild(psText);
+        textBoxOPick.appendChild(tbOPick);
+        textBoxPPick.appendChild(tbPPick);
 
         tbText.textContent = 'You won the round!';
         textBox.appendChild(tbText);
 
-            // ***
         if (playerScore === 3) {
             tbText.textContent = 'Congratulations! You won the game!';
             textBox.appendChild(tbText);
@@ -154,14 +168,17 @@ function scoreUpdate(gameResult) {
         computerScore += 1;
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
+        tbOPick.textContent = `Opponent: ${computerSelection}`;
+        tbPPick.textContent = `You: ${playerSelection}`;
 
         oScoreBox.appendChild(osText);
         pScoreBox.appendChild(psText);
+        textBoxOPick.appendChild(tbOPick);
+        textBoxPPick.appendChild(tbPPick);
 
         tbText.textContent = 'You lost the round.';
         textBox.appendChild(tbText);
 
-        // ***
         if (computerScore === 3) {
             tbText.textContent = 'Sorry! You lost the game.';
             textBox.appendChild(tbText);
@@ -178,9 +195,14 @@ function scoreUpdate(gameResult) {
 
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
+        tbOPick.textContent = `Opponent: ${computerSelection}`;
+        tbPPick.textContent = `You: ${playerSelection}`;
 
         oScoreBox.appendChild(osText);
         pScoreBox.appendChild(psText);
+        textBoxOPick.appendChild(tbOPick);
+        textBoxPPick.appendChild(tbPPick);
+
 
         tbText.textContent = 'The round ends in a tie!';
         textBox.appendChild(tbText);
@@ -189,9 +211,6 @@ function scoreUpdate(gameResult) {
         return counter;
     }
 }
-
-
-
 
 
 
@@ -237,227 +256,8 @@ function game() {
         console.log(gameResult);
         return gameResult;
     });
-
-    /*
-    if (gameResult === "winner") {
-        playerScore ++;
-        osText.textContent = `${computerScore}`;
-        psText.textContent = `${playerScore}`;
-
-        oScoreBox.appendChild(osText);
-        pScoreBox.appendChild(psText);
-
-        tbText.textContent = 'You won the round!';
-        textBox.appendChild(tbText);
-        i++;
-
-            // ***
-        if (playerScore === 3) {
-            tbText.textContent = 'Congratulations! You won the game!';
-            textBox.appendChild(tbText);
-        }
-            
-    } else if (gameResult === "loser") {
-        computerScore ++;
-        osText.textContent = `${computerScore}`;
-        psText.textContent = `${playerScore}`;
-
-        oScoreBox.appendChild(osText);
-        pScoreBox.appendChild(psText);
-
-        tbText.textContent = 'You lost the round.';
-        textBox.appendChild(tbText);
-        i++;
-
-        // ***
-        if (computerScore === 3) {
-            tbText.textContent = 'Sorry! You lost the game.';
-            textBox.appendChild(tbText);
-        }
-
-    // if round is a tie, no points are awarded and round is started over again
-    } else if (gameResult === "tie"){
-        tbText.textContent = 'The game ends in a tie!';
-        textBox.appendChild(tbText);
-        i--;
-    }
-
-    console.log(i);
-    */
-
-    
-    // for loop is used to loop through this code 5 times (5 rounds)
-    // for (let i = 0; i < 5; i++) {
-        // variables below are reset for each round before the if... else
-        // gameResult = "";
-
-
-
-
-        /* 
-            Fix Below
-        */
-        /*
-        playerSelection = '';
-        rock.onclick = () => playerSelection = 'rock';
-        paper.onclick = () => playerSelection = 'paper';
-        scissors.onclick = () => playerSelection = 'scissors';
-        */
-        
-
-        
-        // uses player input to get player choice
-        /*
-        playerPrompt = prompt("Please enter your choice between rock, paper, scissors. You have only " + (5-i) + " guesses left");
-        playerSelection = playerPrompt.toLowerCase();
-        */
-
-        /* 
-            Fix Below
-        */
-
-
-        // computerSelection uses function getComputerChoice() to get computer choice
-        //vcomputerSelection = getComputerChoice();
-
-        /*
-        rock.addEventListener('click', function() {
-            playerSelection = 'rock';
-            return playerSelection;
-        });
-
-        paper.addEventListener('click', function() {
-            playerSelection = 'paper';
-            return playerSelection;
-        });
-
-        scissors.addEventListener('click', function() {
-            playerSelection = 'scissors';
-            return playerSelection;
-        });
-        */
-
-        /*
-        playRound(playerSelection, computerSelection);
-        console.log(playerSelection);
-        console.log(computerSelection);
-        console.log(gameResult);
-        if (gameResult === "winner") {
-            playerScore ++;
-            osText.textContent = `${computerScore}`;
-            psText.textContent = `${playerScore}`;
-
-            oScoreBox.appendChild(osText);
-            pScoreBox.appendChild(psText);
-
-            tbText.textContent = 'You won the round!';
-            textBox.appendChild(tbText);
-
-            // ***
-            if (playerScore === 3) {
-                tbText.textContent = 'Congratulations! You won the game!';
-                textBox.appendChild(tbText);
-            }
-            
-        } else if (gameResult === "loser") {
-            computerScore ++;
-            osText.textContent = `${computerScore}`;
-            psText.textContent = `${playerScore}`;
-
-            oScoreBox.appendChild(osText);
-            pScoreBox.appendChild(psText);
-
-            tbText.textContent = 'You lost the round.';
-            textBox.appendChild(tbText);
-
-            // ***
-            if (computerScore === 3) {
-                tbText.textContent = 'Sorry! You lost the game.';
-                textBox.appendChild(tbText);
-            }
-
-        // if round is a tie, no points are awarded and round is started over again
-        } else if (gameResult === "tie"){
-            tbText.textContent = 'The game ends in a tie!';
-            textBox.appendChild(tbText);
-            i--;
-        }
-
-        console.log(i);
-        */
-        
-        // calls playRound() to start round and display results
-        /*
-        playRound(playerSelection, computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-        */
-
-
-        /*
-        // if... else uses gameResult to determine winner/loser/tie and then to determine who should receive the point
-        // *** - another if... else statement is nestled within first couple of condititional statements that is used to return winner/loser of game 
-        if (gameResult === "winner") {
-            playerScore ++;
-            osText.textContent = `${computerScore}`;
-            psText.textContent = `${playerScore}`;
-
-            oScoreBox.appendChild(osText);
-            pScoreBox.appendChild(psText);
-
-            tbText.textContent = 'You won the round!';
-            textBox.appendChild(tbText);
-
-            // ***
-            if (playerScore === 3) {
-                tbText.textContent = 'Congratulations! You won the game!';
-                textBox.appendChild(tbText);
-                break;
-            }
-            
-        } else if (gameResult === "loser") {
-            computerScore ++;
-            osText.textContent = `${computerScore}`;
-            psText.textContent = `${playerScore}`;
-
-            oScoreBox.appendChild(osText);
-            pScoreBox.appendChild(psText);
-
-            tbText.textContent = 'You lost the round.';
-            textBox.appendChild(tbText);
-
-            // ***
-            if (computerScore === 3) {
-                tbText.textContent = 'Sorry! You lost the game.';
-                textBox.appendChild(tbText);
-                break;
-            }
-
-
-        // if round is a tie, no points are awarded and round is started over again
-        } else if (gameResult === "tie"){
-            tbText.textContent = 'The game ends in a tie!';
-            textBox.appendChild(tbText);
-            i--;
-        } 
-
-
-        // this conditional statement is here to remind players to use rock, paper, scissors for answer and to restart the round
-        else {
-            console.log("You entered: " + playerSelection);
-            console.log("Please use only - rock , paper , scissors");
-            console.log(" ");
-            i--;
-        }
-        */
-    //}  
 }
 
-
-
-
-        /* 
-            Fix Below
-        */
 // uses buttons to let user pick their choice
 let playerPrompt;
 let playerSelection;

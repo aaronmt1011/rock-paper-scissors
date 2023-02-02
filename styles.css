@@ -7,15 +7,25 @@ body {
     color: #272727;
 }
 
-/*
-.background {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+h1 {
+    font-size: 35px;
+    margin: 0px;
 }
-*/
+
+h3 {
+    margin: 0px;
+}
+
+.title-text {
+    text-align: center;
+    margin-bottom: 14px;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0px;
+}
 
 .main-body {
     display: flex;
@@ -29,59 +39,106 @@ body {
     min-width: 450px;
     padding: 8px;
     background-color: white;
-    border: 6px solid #ccc;
+    border: 3px solid black;
     border-radius: 9px;
-    height: 670px;
+    height: 720px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .body-text {
-    padding: 4px 16px;
-    border: 6px solid slateblue;
+    width: 420px;
+    padding: 0px 10px;
+    border: 5px solid slateblue;
     border-radius: 9px;
     background-color: lavender;
     color: darkslateblue;
+    margin-bottom: 10px;
+    margin-top: -10px;
 }
 
 .scoreboard {
-    margin: auto;
-    padding: 2px 14px 11px;
-    width: 350px;
-    height: 210px;
+    margin-top: -15px;
+    padding: 0px 10px;
+    width: 420px;
+    height: 235px;
     background-color: black;
     color: lavender;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 3px solid slateblue;
-    border-radius: 5px;
+    border: 5px solid slateblue;
+    border-radius: 9px;
 }
 
 .score-title {
     margin: auto;
     padding: 5px 0px;
+    text-align: center;
+}
+
+.score-line {
+    height: 4px;
+    width: 125px;
+    background-color: lavender;
 }
 
 .scores {
     margin: auto;
-    padding: 0px 0px;
+    padding: 4px 0px;
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 50px;
 }
 
 .score-cards {
-    height: 95px;
-    width: 105px;
-    margin: 0px;
-    padding: 0px 5px;
+    height: 110px;
+    width: 145px;
+    margin-bottom: 10px;
+    padding: 0px;
     text-align: center;
     background-color: lavender;
     color: darkslateblue;
     border: 3px solid slateblue;
     border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.opp-line {
+    height: 4px;
+    width: 10px;
+    background-color: darkslateblue;
+}
+
+.textcard {
+    height: 65px;
+    width: 420px;
+    padding: 10px;
+    margin: 0px;
+    border: 5px solid slateblue;
+    border-radius: 9px;
+    background-color: lavender;
+    color: darkslateblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.textcard-pick {
+    display: flex;
+    gap: 40px;
+}
+
+.tc-text {
+    display: flex;
+    align-items: center;
 }
 
 .buttons {
@@ -89,18 +146,19 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0px 8px 10px;
+    padding: 0px 8px;
+    gap: 25px;
 }
 
 .btn {
-    width: 95px;
+    width: 120px;
     height: 60px;
-    font-size: large;
+    font-size: 25px;
     font-weight: bold;
-    background-color: lavender;
-    border: 3px solid slateblue;
-    border-radius: 5px;
-    color: darkslateblue;
+    background-color: darkslateblue;
+    border: 3px solid darkslateblue;
+    border-radius: 9px;
+    color: lavender;
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
