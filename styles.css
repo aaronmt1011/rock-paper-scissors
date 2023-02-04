@@ -100,19 +100,31 @@ p {
     padding: 0px;
     text-align: center;
     background-color: lavender;
-    color: darkslateblue;
+    color: lavender;
     border: 3px solid slateblue;
     border-radius: 9px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    
 }
 
-.opp-line {
-    height: 4px;
-    width: 10px;
+.s-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: -26px;
     background-color: darkslateblue;
+    height: 40px;
+    border-radius: 4px;
+    justify-content: flex-end;
+}
+
+.s-line {
+    height: 4px;
+    width: 145px;
+    background-color: black;
 }
 
 .textcard {

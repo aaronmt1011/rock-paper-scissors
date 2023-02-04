@@ -141,8 +141,8 @@ function scoreUpdate(gameResult) {
         computerScore += 0;
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
-        tbOPick.textContent = `Opponent: ${computerSelection}`;
-        tbPPick.textContent = `You: ${playerSelection}`;
+        tbOPick.textContent = `O: ${computerSelection}`;
+        tbPPick.textContent = `Y: ${playerSelection}`;
 
 
         oScoreBox.appendChild(osText);
@@ -168,8 +168,8 @@ function scoreUpdate(gameResult) {
         computerScore += 1;
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
-        tbOPick.textContent = `Opponent: ${computerSelection}`;
-        tbPPick.textContent = `You: ${playerSelection}`;
+        tbOPick.textContent = `O: ${computerSelection}`;
+        tbPPick.textContent = `Y: ${playerSelection}`;
 
         oScoreBox.appendChild(osText);
         pScoreBox.appendChild(psText);
@@ -195,8 +195,8 @@ function scoreUpdate(gameResult) {
 
         osText.textContent = `${computerScore}`;
         psText.textContent = `${playerScore}`;
-        tbOPick.textContent = `Opponent: ${computerSelection}`;
-        tbPPick.textContent = `You: ${playerSelection}`;
+        tbOPick.textContent = `O: ${computerSelection}`;
+        tbPPick.textContent = `Y: ${playerSelection}`;
 
         oScoreBox.appendChild(osText);
         pScoreBox.appendChild(psText);
